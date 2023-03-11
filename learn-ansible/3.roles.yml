@@ -1,0 +1,4 @@
+- name: varaiable from role
+  hosts: localhost
+  role:
+    - demo
