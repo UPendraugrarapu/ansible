@@ -3,7 +3,7 @@
   vars:
    URL: play.example.com
   tasks:
-   - name: print the varaibale
+   - name: print the varaibale from play
      ansible.builtin.debug:
       msg: URL = {{URL}}
 
@@ -21,7 +21,7 @@
 - name: varaiable from task
   hosts: localhost
   tasks:
-   - name: print the varaibale from file
+   - name: print the varaibale from task
      vars: ## these vars will access only in this task , in the same play next task cant access it
       URL: www.chatgpt.com
      ansible.builtin.debug:
@@ -30,6 +30,6 @@
 - name: varaiable from inv file
   hosts: all
   tasks:
-   - name: print the varaibale from file
+   - name: print the varaibale from inv file
      ansible.builtin.debug:
       msg: URL = {{URL}}
