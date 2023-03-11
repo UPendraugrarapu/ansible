@@ -18,11 +18,18 @@
      ansible.builtin.debug:
       msg: URL = {{URL}}
 
-- name: varaiable from file
+- name: varaiable from task
   hosts: localhost
   tasks:
    - name: print the varaibale from file
      vars: ## these vars will access only in this task , in the same play next task cant access it
       URL: www.chatgpt.com
+     ansible.builtin.debug:
+      msg: URL = {{URL}}
+
+- name: varaiable from inv file
+  hosts: all
+  tasks:
+   - name: print the varaibale from file
      ansible.builtin.debug:
       msg: URL = {{URL}}
