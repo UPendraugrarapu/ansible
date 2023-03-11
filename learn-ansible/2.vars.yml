@@ -34,7 +34,7 @@
      ansible.builtin.debug:
       msg: URL = {{URL}}
 
-- name : Register a variable
+- name: Register a variable
   hosts: localhost
   tasks:
    - name: Getup time output
@@ -46,5 +46,9 @@
       msg: "{{out}}"
 
    - name: Declare a variable
-     ansible.builtin.set_facts:
+     ansible.builtin.set_fact:
        status: "{{out.rc}}"
+
+   - name: print status
+     ansible.builtin.debug:
+      msg: "{{status}}"
