@@ -33,3 +33,14 @@
    - name: print the varaibale from inv file
      ansible.builtin.debug:
       msg: URL = {{URL}}
+
+- name : Register a variable
+  hosts: localhost
+  tasks:
+   - name: Getup time output
+     ansible.builtin.shell: uptime
+      register: out
+
+   - name: print output
+     ansible.builtin.debug:
+      msg: "{{out}}"
