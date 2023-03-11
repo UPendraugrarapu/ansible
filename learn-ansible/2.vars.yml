@@ -9,8 +9,8 @@
 
 - name: varaiable from file
   hosts: localhost
-  var_file:
-   - var.yml 
+  vars_file:
+    - var.yml 
   tasks:
    - name: print the varaibale from file
      ansible.builtin.debug:
