@@ -1,4 +1,4 @@
 - name: varaiable from role
   hosts: localhost
-  role:
+  roles:
     - demo
