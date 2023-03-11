@@ -1,6 +1,6 @@
 - name: Play varaiable
   hosts: localhost
-    vars:
+  vars:
    URL: play.example.com
   tasks:
    - name: print the varaibale
