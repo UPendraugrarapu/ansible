@@ -10,9 +10,19 @@
 
 - name: varaiable from file
   hosts: localhost
+  #vars_file works only on play level
   vars_files:
     - var.yml 
   tasks:
    - name: print the varaibale from file
+     ansible.builtin.debug:
+      msg: URL = {{URL}}
+
+- name: varaiable from file
+  hosts: localhost
+  tasks:
+   - name: print the varaibale from file
+     vars: ## these vars will access only in this task , in the same play next task cant access it
+      URL: www.chatgpt.com
      ansible.builtin.debug:
       msg: URL = {{URL}}
