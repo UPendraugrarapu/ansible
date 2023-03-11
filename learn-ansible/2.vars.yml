@@ -9,7 +9,7 @@
 
 - name: varaiable from file
   hosts: localhost
-  vars_file:
+  var_file:
    - var.yml 
   tasks:
    - name: print the varaibale from file
